@@ -1,0 +1,128 @@
+// Variables
+$primary-color: #4a90e2;
+$secondary-color: #ffffff;
+$text-color: #333;
+$shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.login-container {
+    background: $secondary-color;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form {
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: $text-color;
+        font-size: 1.8rem;
+    }
+
+    .input-group {
+        margin-bottom: 1.5rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: $text-color;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+            }
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+
+        .remember {
+            display: flex;
+            align-items: center;
+            color: $text-color;
+
+            input {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .forgot-password {
+            color: $primary-color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 0.9rem;
+        background: $primary-color;
+        border: none;
+        border-radius: 5px;
+        color: $secondary-color;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: darken($primary-color, 10%);
+        }
+    }
+
+    .signup-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: $text-color;
+        font-size: 0.9rem;
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+// Asosiy ranglar va o'zgaruvchilar
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$success-color: #2ecc71;
+$danger-color: #e74c3c;
+$pending-color: #f1c40f;
+$background-color: #ecf0f1;
+
+// Umumiy stillar
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+}
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+// Sidebar stillari
+.sidebar {
+  width: 250px;
+  background-color: $primary-color;
+  color: white;
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin: 15px 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: darken($primary-color, 5%);
+        }
+
+        &.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+// Main content stillari
+.main-content {
+  flex: 1;
+  padding: 30px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 28px;
+      color: $primary-color;
+    }
+
+    .search-bar {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+        border-color: $secondary-color;
+      }
+    }
+  }
+}
+
+// Jadval stillari
+.carts-table {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 14px;
+
+      &.pending {
+        background-color: $pending-color;
+        color: white;
+      }
+
+      &.completed {
+        background-color: $success-color;
+        color: white;
+      }
+    }
+
+    .view-btn, .delete-btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .view-btn {
+      background-color: $secondary-color;
+      color: white;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+
+    .delete-btn {
+      background-color: $danger-color;
+      color: white;
+
+      &:hover {
+        background-color: darken($danger-color, 10%);
+      }
+    }
+  }
+}

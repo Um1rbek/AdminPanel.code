@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../fonts">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/normolize.css ">
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Admin</h2>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="./index.html" class="active">Dashboard</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./users.html">Users</a></li>
+                <li><a href="./carts.html">Carts</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Reports</a></li>
+                <li class="log-out"><a href="./login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+
+
+
+
+    <div class="all">
+        <header class="header">
+            <h1>Products</h1>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+
+            </div>
+            <!-- button.html -->
+            <button class="add_btn">Add Item</button>
+        </header>
+
+        <div class="container hidden">
+            <h1>Add New Product</h1>
+            <form i class="container ">
+                <input type="number" id="id" name="id" placeholder="Enter the id" required />
+
+              <input type="text" id="title" name="title" placeholder="Enter product title" required />
+              
+              <input type="number" id="price" name="price" placeholder="Enter price ($)" required />
+              
+              <textarea id="description" name="description" placeholder="Enter product description" required></textarea>
+              
+    
+                <input type="text" id="category" name="category" placeholder="Enter the category" required />
+        
+              
+              <input type="file" id="image" name="image" placeholder="Enter image URL" required />
+        
+              <button type="submit">Add Product</button>
+            </form>
+        
+            <div id="product-list"></div>
+          </div>
+        
+            
+     
+      
+
+
+
+        <div class="box">
+            <h2>Product List</h2>
+
+            <table class="product-tabl">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>img</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody class="pro-body">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../utils/products.js"></script>
+</body>
+
+</html>

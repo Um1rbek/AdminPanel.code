@@ -1,0 +1,211 @@
+// Variables for consistent theming
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$background-color: #f4f6f9;
+$text-color: #333;
+$border-color: #ddd;
+$hover-color: #2980b9;
+$danger-color: #e74c3c;
+$modal-bg: #fff;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+// Reset and Normalize
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    margin-bottom: 30px;
+    h2 {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  .nav-menu {
+    flex-grow: 1;
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 10px;
+        a {
+          display: block;
+          padding: 10px;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          &.active,
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+        &.log-out {
+          margin-top: auto;
+          a {
+            color: $danger-color;
+            &:hover {
+              background-color: lighten($danger-color, 40%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main Content
+.all {
+  margin-left: 270px;
+  padding: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    h1 {
+      font-size: 28px;
+      color: $primary-color;
+    }
+    .user-info {
+      font-size: 16px;
+      color: $text-color;
+    }
+    .add_btn {
+      padding: 10px 20px;
+      background-color: $secondary-color;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+}
+
+
+
+
+.container {
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea, form select {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #357ab8;
+}
+
+#product-list {
+  margin-top: 20px;
+}
+
+
+
+
+// Responsive Design
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .all {
+    margin-left: 220px;
+    padding: 10px;
+  }
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    h1 {
+      font-size: 24px;
+    }
+  }
+  .box {
+    .product-table {
+      font-size: 14px;
+      th,
+      td {
+        padding: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .all {
+    margin-left: 0;
+  }
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+}

@@ -1,0 +1,268 @@
+// Asosiy ranglar va o'zgaruvchilar
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$success-color: #2ecc71;
+$danger-color: #e74c3c;
+$background-color: #ecf0f1;
+
+// Umumiy stillar
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+}
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+// Sidebar stillari
+.sidebar {
+  width: 250px;
+  background-color: $primary-color;
+  color: white;
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin: 15px 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: darken($primary-color, 5%);
+        }
+
+        &.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+// Main content stillari
+.main-content {
+  flex: 1;
+  padding: 30px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 28px;
+      color: $primary-color;
+    }
+
+    .add-user-btn {
+      padding: 10px 20px;
+      background-color: $secondary-color;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}tr {
+  td {
+    padding: 12px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+
+    .status {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      &.active {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      &.inactive {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
+      &.pending {
+        background-color: #fff3cd;
+        color: #856404;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .edit-btn {
+    background-color: #007bff;
+    color: white;
+    margin-right: 8px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+
+    &:hover {
+      background-color: #a71d2a;
+    }
+  }
+}
+
+
+$primary-color: #0ea5e9;
+$background-overlay: rgba(0, 0, 0, 0.6);
+$white: #ffffff;
+$transition: all 0.3s ease;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn {
+  background-color: $primary-color;
+  color: $white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: $background-overlay;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  &.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background: $white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeIn 0.4s ease;
+
+    h2 {
+      margin-bottom: 20px;
+      color: $primary-color;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
